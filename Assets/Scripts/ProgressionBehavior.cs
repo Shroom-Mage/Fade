@@ -27,9 +27,9 @@ public class ProgressionBehavior : MonoBehaviour {
                 //Decrease the score for any items still lost
                 else if (item.Lost)
                     Score--;
-                Debug.Log("Score: " + Score);
                 item.Found = false;
             }
+            Debug.Log("Score: " + Score);
             //Scatter an item for each cycle that has passed
             //Already lost items don't count towards the total
             int scatterCount = Cycle;

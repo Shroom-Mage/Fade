@@ -9,6 +9,8 @@ public class PlayerBehavior : MonoBehaviour {
     public List<InteractableBehavior> NorthItems;
     public List<InteractableBehavior> SouthItems;
     public InteractableBehavior HeldItem;
+    public InteractableBehavior NearestNorthItem;
+    public InteractableBehavior NearestSouthItem;
 
     public Mesh Walk0;
     public Mesh Walk1;
@@ -18,6 +20,10 @@ public class PlayerBehavior : MonoBehaviour {
     public Mesh Hold1;
     public Mesh Hold2;
     public Mesh Hold3;
+
+    public Transform ArrowUp;
+    public Transform ArrowDown;
+    public Transform ArrowGroup;
 
     private CharacterController _controller;
     private MeshFilter _mesh;
@@ -74,12 +80,13 @@ public class PlayerBehavior : MonoBehaviour {
         if (_canInteract)
             if (HeldItem && interact != 0) {
                 HeldItem.Drop(this, interact);
+                CalculateNearestItems();
             } else if (NorthItems.Count > 0 && interact > 0) {
-                InteractableBehavior nearestItem = FindNearestItem(NorthItems);
-                if (nearestItem) nearestItem.Lift(this);
+                if (NearestNorthItem) NearestNorthItem.Lift(this);
+                CalculateNearestItems();
             } else if (SouthItems.Count > 0 && interact < 0) {
-                InteractableBehavior nearestItem = FindNearestItem(SouthItems);
-                if (nearestItem) nearestItem.Lift(this);
+                if (NearestSouthItem) NearestSouthItem.Lift(this);
+                CalculateNearestItems();
             }
 
         if (interact != 0)
@@ -96,6 +103,8 @@ public class PlayerBehavior : MonoBehaviour {
                 NorthItems.Add(item);
             else if (item.transform.position.z < transform.position.z)
                 SouthItems.Add(item);
+
+        CalculateNearestItems();
     }
 
     //Exit the range of an interactable item
@@ -106,6 +115,8 @@ public class PlayerBehavior : MonoBehaviour {
                 NorthItems.Remove(item);
             else if (item.transform.position.z < transform.position.z)
                 SouthItems.Remove(item);
+
+        CalculateNearestItems();
     }
     
     //Find the item closest to the player in the given list of items
@@ -114,8 +125,11 @@ public class PlayerBehavior : MonoBehaviour {
         float nearestItemDistance = Mathf.Infinity;
         //Find the nearest item
         foreach (InteractableBehavior item in items) {
-            //Get the distance
-            float itemDistance = (item.transform.position - transform.position).magnitude;
+            //Skip held items
+            if (item == HeldItem)
+                continue;
+            //Find the distance
+            float itemDistance = item.transform.position.x - transform.position.x;
             //Store the item if it's the new nearest
             if (itemDistance < nearestItemDistance) {
                 nearestItem = item;
@@ -124,6 +138,33 @@ public class PlayerBehavior : MonoBehaviour {
         }
         //Return the nearest item
         return nearestItem;
+    }
+
+    private void CalculateNearestItems() {
+        //Position arrow over nearest north item
+        NearestNorthItem = FindNearestItem(NorthItems);
+        if (NearestNorthItem) {
+            ArrowUp.SetParent(NearestNorthItem.transform);
+            ArrowUp.position = new Vector3(
+                NearestNorthItem.transform.position.x,
+                1,
+                NearestNorthItem.transform.position.z);
+        } else {
+            ArrowUp.SetParent(ArrowGroup);
+            ArrowUp.localPosition = new Vector3(0, 0, 0);
+        }
+        //Position arrow over nearest south item
+        NearestSouthItem = FindNearestItem(SouthItems);
+        if (NearestSouthItem) {
+            ArrowDown.SetParent(NearestSouthItem.transform);
+            ArrowDown.position = new Vector3(
+                NearestSouthItem.transform.position.x,
+                1,
+                NearestSouthItem.transform.position.z);
+        } else {
+            ArrowDown.SetParent(ArrowGroup);
+            ArrowDown.localPosition = new Vector3(0, 0, 0);
+        }
     }
 
     public void SetPosition(Vector3 position) {
