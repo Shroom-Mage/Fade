@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{39b30988-5051-47df-9b66-70ef9e544e1b}">
+		<property name="assetPath">
+			<value>sfx/ggj21SFX-footsteps-001 - Trimmed.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.22165532879818595</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{90ba32ab-fa05-4625-93ed-9569e0995940}</destination>
+		</relationship>
+	</object>
+</objects>
