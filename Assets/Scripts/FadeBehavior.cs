@@ -32,7 +32,7 @@ public class FadeBehavior : MonoBehaviour
 
         //Set screen alpha according to score
         Color screen = FadeScreen.color;
-        screen.a = -Progression.Score * 0.05f;
+        screen.a = -Progression.Score * 0.025f;
         if (screen.a >= 1.0f)
             _countdown -= Time.deltaTime;
         FadeScreen.color = screen;
