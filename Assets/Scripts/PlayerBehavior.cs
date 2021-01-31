@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerBehavior : MonoBehaviour {
@@ -25,6 +26,9 @@ public class PlayerBehavior : MonoBehaviour {
     public Transform ArrowDown;
     public Transform ArrowGroup;
 
+    public StudioEventEmitter Footsteps;
+    public StudioEventEmitter Music;
+
     private CharacterController _controller;
     private MeshFilter _mesh;
 
@@ -35,6 +39,7 @@ public class PlayerBehavior : MonoBehaviour {
     void Start() {
         _controller = GetComponent<CharacterController>();
         _mesh = GetComponentInChildren<MeshFilter>();
+        Music.Play();
     }
 
     // Update is called once per frame
@@ -50,9 +55,11 @@ public class PlayerBehavior : MonoBehaviour {
         Vector3 deltaPosition = transform.position - iPosition;
 
         //Calculate animation frame
+        int previousFrame = (int)_walkFrame;
         _walkFrame += deltaPosition.x;
         if (_walkFrame >= 4) _walkFrame -= 4;
         else if (_walkFrame < 0) _walkFrame += 4;
+        int currentFrame = (int)_walkFrame;
 
         //Animate
         if (!HeldItem) {
@@ -66,6 +73,10 @@ public class PlayerBehavior : MonoBehaviour {
             else if (_walkFrame >= 1) _mesh.mesh = Hold1;
             else if (_walkFrame >= 0) _mesh.mesh = Hold0;
         }
+
+        //Play footsteps
+        if (previousFrame != currentFrame && (currentFrame == 1 || currentFrame == 3))
+            Footsteps.Play();
 
         //Face
         Quaternion newRotation = new Quaternion();
