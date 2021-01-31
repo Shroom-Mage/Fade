@@ -116,10 +116,10 @@ public class PlayerBehavior : MonoBehaviour {
         Quaternion quaternion = new Quaternion();
         if (HeldItem) {
             MoveArrow(NearestSpace);
-            quaternion.eulerAngles = new Vector3(-90.0f, 0.0f, 0.0f);
+            quaternion.eulerAngles = new Vector3(180.0f, 0.0f, 0.0f);
         } else {
             MoveArrow(NearestItem);
-            quaternion.eulerAngles = new Vector3(90.0f, 0.0f, 0.0f);
+            quaternion.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
         }
         Arrow.rotation = quaternion;
     }
