@@ -7,13 +7,30 @@ public class ProgressionBehavior : MonoBehaviour {
     public int Score = 0;
 
     public List<InteractableBehavior> Items = new List<InteractableBehavior>();
+    public List<Transform> Homes = new List<Transform>();
+    public List<Transform> Losts = new List<Transform>();
     public List<Transform> Furniture = new List<Transform>();
 
+    public GameObject HomePrefab;
+
     private void Start() {
+        //Set up all interactables and their homes
         GameObject[] interactables = GameObject.FindGameObjectsWithTag("Interactable");
         foreach (GameObject interactable in interactables) {
-            Items.Add(interactable.GetComponent<InteractableBehavior>());
+            InteractableBehavior item = interactable.GetComponent<InteractableBehavior>();
+            Items.Add(item);
+            Transform home = Instantiate(HomePrefab).transform;
+            home.position = item.transform.position;
+            home.rotation = item.transform.rotation;
+            home.name = item.name + " Home";
+            Homes.Add(home);
         }
+        //Set up all lost points
+        GameObject[] losts = GameObject.FindGameObjectsWithTag("Lost");
+        foreach (GameObject lost in losts) {
+            Furniture.Add(lost.transform);
+        }
+        //Set up all furniture
         GameObject[] furnitures = GameObject.FindGameObjectsWithTag("Furniture");
         foreach (GameObject furniture in furnitures) {
             Furniture.Add(furniture.transform);

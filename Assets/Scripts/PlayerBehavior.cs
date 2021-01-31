@@ -39,7 +39,7 @@ public class PlayerBehavior : MonoBehaviour {
     void Start() {
         _controller = GetComponent<CharacterController>();
         _mesh = GetComponentInChildren<MeshFilter>();
-        Music.Play();
+        //Music.Play();
     }
 
     // Update is called once per frame

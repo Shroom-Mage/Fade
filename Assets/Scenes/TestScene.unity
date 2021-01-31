@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchen_sink
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: be6d31011fec3e542b9511c5fed0d9a2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be6d31011fec3e542b9511c5fed0d9a2, type: 3}
 --- !u!4 &7928492 stripped
@@ -275,6 +280,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: livingroom_rug
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 987a63c4a0f33554a9c3b98309a2eb78,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     - target: {fileID: 5392974366428338033, guid: 987a63c4a0f33554a9c3b98309a2eb78,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -348,6 +358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kitchen_shelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b802648716adda641a7c14cf1ce569bd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b802648716adda641a7c14cf1ce569bd, type: 3}
@@ -504,6 +519,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bedroom_chair
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e61bd23444d16f441b455d722255ed72,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e61bd23444d16f441b455d722255ed72, type: 3}
 --- !u!4 &282730336 stripped
@@ -585,6 +605,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bedroom_drawers
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: edbaea5debc6ba64f9c634ca3b515fb1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edbaea5debc6ba64f9c634ca3b515fb1, type: 3}
 --- !u!1001 &343103932
@@ -654,6 +679,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bedroom_window
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bc674858b98df19499d86132eb955644,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc674858b98df19499d86132eb955644, type: 3}
 --- !u!1 &363957992 stripped
@@ -682,6 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lost: 0
   Found: 0
+  Home: {fileID: 0}
 --- !u!135 &363957997
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -762,6 +793,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bedroom_picture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 352c9567eb7050c4ca3cc46da9d0e4f8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 352c9567eb7050c4ca3cc46da9d0e4f8, type: 3}
 --- !u!4 &388861215 stripped
@@ -836,6 +872,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: livingroom_tall_lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78e066340f939a448824eaba13390f75,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     - target: {fileID: 4234774693144194129, guid: 78e066340f939a448824eaba13390f75,
         type: 3}
@@ -1035,6 +1076,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bedroom_lamp
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8dbfe98688b051b48a843b6c5a3b403d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dbfe98688b051b48a843b6c5a3b403d, type: 3}
 --- !u!1 &462043686 stripped
@@ -1063,6 +1109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lost: 0
   Found: 0
+  Home: {fileID: 0}
 --- !u!135 &462043691
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1151,6 +1198,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1273687069}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &538339836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67aad4f13a5a7a54f9607a278d09d4c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1252443273}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &538339839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538339836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d853895a57b45094e91e4b07ebf56cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &543545578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eea9bb791087de4468b21b8bbb7b5a93,
@@ -1224,6 +1289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: livingroom_tv
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a0c40aea6b069944a8b57a8212200689,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0c40aea6b069944a8b57a8212200689, type: 3}
 --- !u!1001 &554260389
@@ -1241,17 +1311,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 781fb311489f115449bcf47d82225cc1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.708
+      value: 28.543
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 781fb311489f115449bcf47d82225cc1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.476
+      value: 0.529
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 781fb311489f115449bcf47d82225cc1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.25
+      value: 1.017
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 781fb311489f115449bcf47d82225cc1,
         type: 3}
@@ -1415,6 +1485,82 @@ MonoBehaviour:
   Cycle: 1
   Score: 0
   Items: []
+  Homes: []
+  Losts: []
+  Furniture: []
+  HomePrefab: {fileID: 2560245740754866428, guid: cb5044d8d10f92548b83420e08816985,
+    type: 3}
+  LostPrefab: {fileID: 7359196361318750109, guid: 29c93747a47b85d41a471994b0158b0d,
+    type: 3}
+--- !u!1001 &602062900
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7359196361318750109, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_Name
+      value: Item Lost
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788822046660890948, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788822046660890948, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788822046660890948, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.749
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788822046660890948, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.467
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788822046660890948, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788822046660890948, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788822046660890948, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788822046660890948, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788822046660890948, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788822046660890948, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8788822046660890948, guid: 29c93747a47b85d41a471994b0158b0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29c93747a47b85d41a471994b0158b0d, type: 3}
 --- !u!4 &610638375 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a004977bf438ec544829e1be8aa22a03,
@@ -1459,7 +1605,7 @@ Transform:
   - {fileID: 1122425485}
   - {fileID: 1873162946}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -1713,6 +1859,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: livingroom_plant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a004977bf438ec544829e1be8aa22a03,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a004977bf438ec544829e1be8aa22a03, type: 3}
 --- !u!1001 &825208331
@@ -1782,6 +1933,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bedroom_plant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 582abe3ebd73c6645a9ccecc289aef8b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 582abe3ebd73c6645a9ccecc289aef8b, type: 3}
 --- !u!4 &839991938 stripped
@@ -1822,6 +1978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lost: 0
   Found: 0
+  Home: {fileID: 0}
 --- !u!135 &869558234
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1901,6 +2058,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kitchen_countertop
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d11504f192ce73241a871d012b40f219,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d11504f192ce73241a871d012b40f219, type: 3}
@@ -2099,6 +2261,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bedroom_bed
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 210655d695ee3aa4c84fd0e5ace7bbe5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 210655d695ee3aa4c84fd0e5ace7bbe5, type: 3}
 --- !u!1001 &1088491422
@@ -2168,6 +2335,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchen_fridge
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 34712d3e8348cfa42b4f6d9ad95d5c49,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34712d3e8348cfa42b4f6d9ad95d5c49, type: 3}
 --- !u!1001 &1095184272
@@ -2236,6 +2408,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kitchen_table
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eea9bb791087de4468b21b8bbb7b5a93,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eea9bb791087de4468b21b8bbb7b5a93, type: 3}
@@ -2317,6 +2494,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bedroom_desk
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa4e30fdf6da39e4ab9a26168690da13,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa4e30fdf6da39e4ab9a26168690da13, type: 3}
@@ -2486,6 +2668,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: livingroom_counter
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 481a5b75e865dd6408cdd8bccb5c097f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 481a5b75e865dd6408cdd8bccb5c097f, type: 3}
 --- !u!1 &1298630794 stripped
@@ -2514,6 +2701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lost: 0
   Found: 0
+  Home: {fileID: 0}
 --- !u!135 &1298630799
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2600,6 +2788,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchen_cabinet
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d1a22ebc7fe4af4489b060dc42ece58,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d1a22ebc7fe4af4489b060dc42ece58, type: 3}
 --- !u!1001 &1418502008
@@ -2668,6 +2861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bedroom_table
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b0355d37342a3c4da8e07403f32c110,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b0355d37342a3c4da8e07403f32c110, type: 3}
@@ -2750,6 +2948,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: livingroom_couch
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: af4a5e2733bdf7545943e4acb93e4074,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af4a5e2733bdf7545943e4acb93e4074, type: 3}
 --- !u!1 &1684122617 stripped
@@ -2812,7 +3015,7 @@ Transform:
   - {fileID: 419937183}
   - {fileID: 598666442}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1707734778
 PrefabInstance:
@@ -2880,6 +3083,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kitchen_window
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eaf43649ce87a4445ab34f05069fe295,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf43649ce87a4445ab34f05069fe295, type: 3}
@@ -3098,6 +3306,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: livingroom_chair
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 18333afa1b7cc4345a06a237750503c4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18333afa1b7cc4345a06a237750503c4, type: 3}
 --- !u!1 &1767831361 stripped
@@ -3126,6 +3339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lost: 0
   Found: 0
+  Home: {fileID: 0}
 --- !u!135 &1767831366
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3205,6 +3419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: livingroom_small_lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c4c86c1d9f7b3494caea8fd52453f847,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4c86c1d9f7b3494caea8fd52453f847, type: 3}
@@ -3355,6 +3574,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchen_oven
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ab7050494a430494ab8774348881ffbe,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab7050494a430494ab8774348881ffbe, type: 3}
 --- !u!4 &1812476949 stripped
@@ -3430,6 +3654,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: livingroom_coffeetable
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5139aaff4d2877e4e83f67c6635a50c2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5139aaff4d2877e4e83f67c6635a50c2, type: 3}
 --- !u!4 &1845700428 stripped
@@ -3478,7 +3707,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 00270d21fae9ab842a995ffa30d52555,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.25
+      value: 1.11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00270d21fae9ab842a995ffa30d52555,
         type: 3}
@@ -3519,6 +3748,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: livingroom_bookshelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 00270d21fae9ab842a995ffa30d52555,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00270d21fae9ab842a995ffa30d52555, type: 3}
@@ -3630,8 +3864,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchen_stool
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d07b55c63214e4a4ba8c63616bf655a0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d07b55c63214e4a4ba8c63616bf655a0, type: 3}
+--- !u!1 &1958505926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67aad4f13a5a7a54f9607a278d09d4c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 487992712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1958505929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958505926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d853895a57b45094e91e4b07ebf56cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1983190337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3699,6 +3956,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bedroom_alarm
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7ed7e8c6ac7d46e4991e0ffe68b7b4b4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ed7e8c6ac7d46e4991e0ffe68b7b4b4, type: 3}
 --- !u!1 &2003668077
@@ -3739,7 +4001,7 @@ Transform:
   - {fileID: 1112859534}
   - {fileID: 282730336}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2006588264
 GameObject:
@@ -3771,7 +4033,7 @@ Transform:
   - {fileID: 2017137719}
   - {fileID: 50348302}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2017137719 stripped
 Transform:
@@ -3828,7 +4090,7 @@ Transform:
   - {fileID: 543545578}
   - {fileID: 1138339312}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8324060674910729859
 PrefabInstance:
