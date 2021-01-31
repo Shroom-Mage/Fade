@@ -6,9 +6,11 @@ public class InteractableBehavior : MonoBehaviour {
     public bool Lost = false;
     public bool Found = false;
 
+    private Vector3 _startingPosition;
+
     // Start is called before the first frame update
     void Start() {
-
+        _startingPosition = transform.position;
     }
 
     // Update is called once per frame

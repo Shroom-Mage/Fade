@@ -7,11 +7,16 @@ public class ProgressionBehavior : MonoBehaviour {
     public int Score = 0;
 
     public List<InteractableBehavior> Items = new List<InteractableBehavior>();
+    public List<Transform> Furniture = new List<Transform>();
 
     private void Start() {
         GameObject[] interactables = GameObject.FindGameObjectsWithTag("Interactable");
         foreach (GameObject interactable in interactables) {
             Items.Add(interactable.GetComponent<InteractableBehavior>());
+        }
+        GameObject[] furnitures = GameObject.FindGameObjectsWithTag("Furniture");
+        foreach (GameObject furniture in furnitures) {
+            Furniture.Add(furniture.transform);
         }
     }
 
@@ -19,6 +24,9 @@ public class ProgressionBehavior : MonoBehaviour {
         PlayerBehavior player = other.gameObject.GetComponentInParent<PlayerBehavior>();
         if (player) {
             player.SetPosition(0, 0, 0);
+            //Shuffle the lists
+            Shuffle(Items);
+            Shuffle(Furniture);
             //Iterate through every interactable
             foreach (InteractableBehavior item in Items) {
                 //Increase the score for items correctly found
@@ -41,6 +49,18 @@ public class ProgressionBehavior : MonoBehaviour {
                     item.Scatter();
             }
             Cycle++;
+        }
+    }
+
+    //Shuffle method based on the Fisher-Yates shuffle
+    public void Shuffle<T>(List<T> list) {
+        int n = list.Count;
+        while (n > 1) {
+            n--;
+            int k = Random.Range(0, n + 1);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
         }
     }
 
