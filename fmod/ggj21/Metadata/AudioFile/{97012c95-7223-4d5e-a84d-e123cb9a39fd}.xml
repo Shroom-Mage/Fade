@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{97012c95-7223-4d5e-a84d-e123cb9a39fd}">
+		<property name="assetPath">
+			<value>sfx/footstepsVerb/ggj21SFX-footstepsVerb-013.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.3333333333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{90ba32ab-fa05-4625-93ed-9569e0995940}</destination>
+		</relationship>
+	</object>
+</objects>
