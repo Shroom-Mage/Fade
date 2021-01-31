@@ -7,11 +7,11 @@ using FMODUnity;
 public class PlayerBehavior : MonoBehaviour {
     public float Speed = 5.0f;
 
-    public List<InteractableBehavior> NorthItems;
-    public List<InteractableBehavior> SouthItems;
     public InteractableBehavior HeldItem;
-    public InteractableBehavior NearestNorthItem;
-    public InteractableBehavior NearestSouthItem;
+    public InteractableBehavior NearestItem;
+    public ItemSpaceBehavior NearestSpace;
+    public List<InteractableBehavior> NearbyItems;
+    public List<ItemSpaceBehavior> NearbySpaces;
 
     public Mesh Walk0;
     public Mesh Walk1;
@@ -22,12 +22,12 @@ public class PlayerBehavior : MonoBehaviour {
     public Mesh Hold2;
     public Mesh Hold3;
 
-    public Transform ArrowUp;
-    public Transform ArrowDown;
-    public Transform ArrowGroup;
+    public Transform Arrow;
 
     public StudioEventEmitter Footsteps;
     public StudioEventEmitter Music;
+
+    public List<ItemSpaceBehavior> HomeSpaces;
 
     private CharacterController _controller;
     private MeshFilter _mesh;
@@ -39,7 +39,7 @@ public class PlayerBehavior : MonoBehaviour {
     void Start() {
         _controller = GetComponent<CharacterController>();
         _mesh = GetComponentInChildren<MeshFilter>();
-        Music.Play();
+        //Music.Play();
     }
 
     // Update is called once per frame
@@ -86,96 +86,133 @@ public class PlayerBehavior : MonoBehaviour {
         else _mesh.mesh = Hold0;
         _mesh.transform.rotation = newRotation;
 
+        //Find nearest item or space
+        if (!HeldItem)
+            NearestItem = FindNearest(NearbyItems);
+        else
+            NearestSpace = FindNearest(NearbySpaces);
+
         //Calculate interation
         float interact = Input.GetAxis("Vertical");
-        if (_canInteract)
-            if (HeldItem && interact != 0) {
-                HeldItem.Drop(this, interact);
-                CalculateNearestItems();
-            } else if (NorthItems.Count > 0 && interact > 0) {
-                if (NearestNorthItem) NearestNorthItem.Lift(this);
-                CalculateNearestItems();
-            } else if (SouthItems.Count > 0 && interact < 0) {
-                if (NearestSouthItem) NearestSouthItem.Lift(this);
-                CalculateNearestItems();
+        if (_canInteract) {
+            if (interact < 0 && HeldItem && NearbySpaces.Count > 0) {
+                if (NearestSpace) {
+                    HeldItem.Drop(this, NearestSpace);
+                    //NearbySpaces.Remove(NearestSpace);
+                }
+            } else if (interact > 0 && !HeldItem && NearbyItems.Count > 0) {
+                if (NearestItem) {
+                    NearestItem.Lift(this);
+                    //NearbyItems.Remove(NearestItem);
+                }
             }
-
+        }
         if (interact != 0)
             _canInteract = false;
         else
             _canInteract = true;
+
+        //Update arrow
+        Quaternion quaternion = new Quaternion();
+        if (HeldItem) {
+            MoveArrow(NearestSpace);
+            quaternion.eulerAngles = new Vector3(180.0f, 0.0f, 0.0f);
+        } else {
+            MoveArrow(NearestItem);
+            quaternion.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+        }
+        Arrow.rotation = quaternion;
     }
 
     //Enter the range of an interactable item
     private void OnTriggerEnter(Collider other) {
-        InteractableBehavior item = other.GetComponentInParent<InteractableBehavior>();
-        if (item)
-            if (item.transform.position.z > transform.position.z)
-                NorthItems.Add(item);
-            else if (item.transform.position.z < transform.position.z)
-                SouthItems.Add(item);
-
-        CalculateNearestItems();
+        InteractableBehavior item = other.GetComponent<InteractableBehavior>();
+        if (item) {
+            NearbyItems.Add(item);
+        }
+        ItemSpaceBehavior space = other.GetComponent<ItemSpaceBehavior>();
+        if (space) {
+            NearbySpaces.Add(space);
+        }
     }
 
     //Exit the range of an interactable item
     private void OnTriggerExit(Collider other) {
-        InteractableBehavior item = other.GetComponentInParent<InteractableBehavior>();
-        if (item)
-            if (item.transform.position.z > transform.position.z)
-                NorthItems.Remove(item);
-            else if (item.transform.position.z < transform.position.z)
-                SouthItems.Remove(item);
-
-        CalculateNearestItems();
+        InteractableBehavior item = other.GetComponent<InteractableBehavior>();
+        if (item) {
+            NearbyItems.Remove(item);
+        }
+        ItemSpaceBehavior space = other.GetComponent<ItemSpaceBehavior>();
+        if (space) {
+            NearbySpaces.Remove(space);
+        }
     }
     
     //Find the item closest to the player in the given list of items
-    private InteractableBehavior FindNearestItem(List<InteractableBehavior> items) {
-        InteractableBehavior nearestItem = null;
-        float nearestItemDistance = Mathf.Infinity;
-        //Find the nearest item
-        foreach (InteractableBehavior item in items) {
+    private InteractableBehavior FindNearest(List<InteractableBehavior> list) {
+        InteractableBehavior nearest = null;
+        float shortestDistance = Mathf.Infinity;
+        //Find the nearest
+        foreach (InteractableBehavior item in list) {
             //Skip held items
             if (item == HeldItem)
                 continue;
             //Find the distance
-            float itemDistance = item.transform.position.x - transform.position.x;
+            float distance = Mathf.Abs(item.transform.position.x - transform.position.x);
             //Store the item if it's the new nearest
-            if (itemDistance < nearestItemDistance) {
-                nearestItem = item;
-                nearestItemDistance = itemDistance;
+            if (distance < shortestDistance) {
+                nearest = item;
+                shortestDistance = distance;
             }
         }
-        //Return the nearest item
-        return nearestItem;
+        return nearest;
     }
 
-    private void CalculateNearestItems() {
-        //Position arrow over nearest north item
-        NearestNorthItem = FindNearestItem(NorthItems);
-        if (NearestNorthItem) {
-            ArrowUp.SetParent(NearestNorthItem.transform);
-            ArrowUp.position = new Vector3(
-                NearestNorthItem.transform.position.x,
-                1,
-                NearestNorthItem.transform.position.z);
-        } else {
-            ArrowUp.SetParent(ArrowGroup);
-            ArrowUp.localPosition = new Vector3(0, 0, 0);
+    //Find the space closest to the player in the given list of spaces
+    private ItemSpaceBehavior FindNearest(List<ItemSpaceBehavior> list) {
+        ItemSpaceBehavior nearest = null;
+        float shortestDistance = Mathf.Infinity;
+        //Find the nearest
+        foreach (ItemSpaceBehavior space in list) {
+            //Skip occupied spaces
+            if (space.item)
+                continue;
+            //Find the distance
+            float distance = Mathf.Abs(space.transform.position.x - transform.position.x);
+            //Store the item if it's the new nearest
+            if (distance < shortestDistance) {
+                nearest = space;
+                shortestDistance = distance;
+            }
         }
-        //Position arrow over nearest south item
-        NearestSouthItem = FindNearestItem(SouthItems);
-        if (NearestSouthItem) {
-            ArrowDown.SetParent(NearestSouthItem.transform);
-            ArrowDown.position = new Vector3(
-                NearestSouthItem.transform.position.x,
-                1,
-                NearestSouthItem.transform.position.z);
+        return nearest;
+    }
+
+    public void MoveArrow(MonoBehaviour target) {
+        //Position arrow over nearest
+        if (target) {
+            if (Arrow.parent != target.transform) {
+                Arrow.SetParent(target.transform);
+                Arrow.position = new Vector3(
+                    target.transform.position.x,
+                    target.transform.position.y + 0.4f,
+                    target.transform.position.z - 0.25f);
+            } else {
+                BobArrow(Arrow);
+            }
         } else {
-            ArrowDown.SetParent(ArrowGroup);
-            ArrowDown.localPosition = new Vector3(0, 0, 0);
+            Arrow.parent = null;
+            Arrow.position = new Vector3(0, -5, 0);
         }
+    }
+
+    public void BobArrow(Transform arrow) {
+        //Calculate arrow bob
+        Vector3 pos = arrow.position;
+        float deltaY = Mathf.Sin(Time.timeSinceLevelLoad + Time.deltaTime);
+        deltaY -= Mathf.Sin(Time.timeSinceLevelLoad);
+        deltaY /= 20;
+        arrow.position = new Vector3(pos.x, pos.y + deltaY, pos.z);
     }
 
     public void SetPosition(Vector3 position) {
