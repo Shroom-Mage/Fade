@@ -2,33 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//public class ItemSpace {
+//    public Transform transform = null;
+//    public InteractableBehavior item = null;
+//}
+
 public class ProgressionBehavior : MonoBehaviour {
     public int Cycle = 1;
     public int Score = 0;
 
     public List<InteractableBehavior> Items = new List<InteractableBehavior>();
-    public List<Transform> Homes = new List<Transform>();
-    public List<Transform> Losts = new List<Transform>();
+    public List<ItemSpaceBehavior> HomeSpaces = new List<ItemSpaceBehavior>();
+    public List<ItemSpaceBehavior> LostSpaces = new List<ItemSpaceBehavior>();
     public List<Transform> Furniture = new List<Transform>();
 
     public GameObject HomePrefab;
+
+    public PlayerBehavior Player;
+    public Transform Title;
 
     private void Start() {
         //Set up all interactables and their homes
         GameObject[] interactables = GameObject.FindGameObjectsWithTag("Interactable");
         foreach (GameObject interactable in interactables) {
+            //Store the item
             InteractableBehavior item = interactable.GetComponent<InteractableBehavior>();
             Items.Add(item);
-            Transform home = Instantiate(HomePrefab).transform;
-            home.position = item.transform.position;
-            home.rotation = item.transform.rotation;
-            home.name = item.name + " Home";
-            Homes.Add(home);
+            //Create the home space
+            GameObject spaceObject = Instantiate(HomePrefab);
+            ItemSpaceBehavior space = spaceObject.GetComponent<ItemSpaceBehavior>();
+            //ItemSpace space = new ItemSpace();
+            //space.transform = Instantiate(HomePrefab).transform;
+            spaceObject.transform.position = item.transform.position;
+            spaceObject.transform.rotation = item.transform.rotation;
+            spaceObject.transform.name = item.name + " Home";
+            //Occupy the space with the item
+            item.OccupySpace(space);
+            //Store the home space
+            HomeSpaces.Add(space);
+            item.HomeSpace = space;
         }
+        Player.HomeSpaces = HomeSpaces;
         //Set up all lost points
         GameObject[] losts = GameObject.FindGameObjectsWithTag("Lost");
         foreach (GameObject lost in losts) {
-            Furniture.Add(lost.transform);
+            //Create the lost space
+            ItemSpaceBehavior space = lost.GetComponent<ItemSpaceBehavior>();
+            LostSpaces.Add(space);
         }
         //Set up all furniture
         GameObject[] furnitures = GameObject.FindGameObjectsWithTag("Furniture");
@@ -38,6 +58,7 @@ public class ProgressionBehavior : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
+        Title.transform.position = new Vector3(0, -20, 0);
         PlayerBehavior player = other.gameObject.GetComponentInParent<PlayerBehavior>();
         if (player) {
             player.SetPosition(0, 0, 0);
@@ -46,12 +67,16 @@ public class ProgressionBehavior : MonoBehaviour {
             Shuffle(Furniture);
             //Iterate through every interactable
             foreach (InteractableBehavior item in Items) {
-                //Increase the score for items correctly found
-                if (item.Found && !item.Lost)
-                    Score++;
-                //Decrease the score for any items still lost
-                else if (item.Lost)
-                    Score--;
+                //Ignore held items
+                if (item == player.HeldItem) { }
+                else { Score += item.Value; }
+                ////Increase the score for items correctly found
+                //else if (item.Found && !item.Lost)
+                //    Score++;
+                ////Decrease the score for any items still lost
+                //else if (item.Lost)
+                //    Score--;
+                item.Value = 0;
                 item.Found = false;
             }
             Debug.Log("Score: " + Score);
@@ -63,8 +88,11 @@ public class ProgressionBehavior : MonoBehaviour {
                 if (item.Lost)
                     scatterCount++;
                 if (item.transform.parent != player.transform)
-                    item.Scatter();
+                    item.Scatter(LostSpaces);
             }
+            //Rotate furniture according to the score
+
+
             Cycle++;
         }
     }
