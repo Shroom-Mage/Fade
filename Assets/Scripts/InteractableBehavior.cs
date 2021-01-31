@@ -37,10 +37,9 @@ public class InteractableBehavior : MonoBehaviour {
 
         //Flag as not Lost if in the correct space
         if (_occupiedSpace == HomeSpace) {
-            if (Value == -1) Value = 1;
+            if (Value == -1) Value = 0;
             Lost = false;
             Found = true;
-            Debug.Log(name + " is not lost");
         }
 
     }

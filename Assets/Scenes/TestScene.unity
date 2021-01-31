@@ -2767,6 +2767,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchen_clock
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5bd035766caebc42bbca489e7603583,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5bd035766caebc42bbca489e7603583, type: 3}
 --- !u!4 &524696490 stripped
@@ -3808,6 +3813,7 @@ GameObject:
   - component: {fileID: 705894877}
   - component: {fileID: 705894876}
   - component: {fileID: 705894875}
+  - component: {fileID: 705894879}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -3889,6 +3895,18 @@ Transform:
   m_Father: {fileID: 1692797771}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &705894879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705894874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1716482f407f5774583f01f839a550fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &716501113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5646,6 +5664,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kitchen_cabinetopen
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8f8fbb5678780a5449a3e802c8c6771d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Furniture
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f8fbb5678780a5449a3e802c8c6771d, type: 3}
@@ -7837,7 +7860,9 @@ MonoBehaviour:
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params: []
+  Params:
+  - Name: Steps
+    Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20

@@ -91,7 +91,12 @@ public class ProgressionBehavior : MonoBehaviour {
                     item.Scatter(LostSpaces);
             }
             //Rotate furniture according to the score
-
+            int rotateCount = -Score;
+            for (int i = 0; i < rotateCount && i < Items.Count; i++) {
+                Transform furniture = Furniture[i];
+                if (furniture.transform.parent != player.transform)
+                    furniture.Rotate(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
+            }
 
             Cycle++;
         }
