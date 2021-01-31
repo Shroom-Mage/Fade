@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 5023418085504990789}
   - component: {fileID: 1392536205716153154}
   - component: {fileID: 7453718688606730356}
+  - component: {fileID: 7622977670979547666}
+  - component: {fileID: 6068925684340690925}
+  - component: {fileID: 2220852208923595382}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -78,9 +81,83 @@ MonoBehaviour:
   Hold2: {fileID: -1697590454101916811, guid: 9d78e5256a591c84dbe280b40d63f76f, type: 3}
   Hold3: {fileID: -3382647201409931977, guid: 28bb8c75d9836d4439a44921901e38c8, type: 3}
   Arrow: {fileID: 0}
-  Footsteps: {fileID: 0}
+  Footsteps: {fileID: 7622977670979547666}
+  Pickup: {fileID: 6068925684340690925}
+  Putdown: {fileID: 2220852208923595382}
+  Intro: {fileID: 0}
   Music: {fileID: 0}
   HomeSpaces: []
+--- !u!114 &7622977670979547666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107312952394169238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/playerCharacter/footsteps
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Steps
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &6068925684340690925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107312952394169238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/playerCharacter/pickup
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &2220852208923595382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107312952394169238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/playerCharacter/putdown
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &5878012581038463198
 PrefabInstance:
   m_ObjectHideFlags: 0

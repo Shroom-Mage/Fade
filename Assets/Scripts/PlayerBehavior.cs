@@ -25,6 +25,9 @@ public class PlayerBehavior : MonoBehaviour {
     public Transform Arrow;
 
     public StudioEventEmitter Footsteps;
+    public StudioEventEmitter Pickup;
+    public StudioEventEmitter Putdown;
+    public StudioEventEmitter Intro;
     public StudioEventEmitter Music;
 
     public List<ItemSpaceBehavior> HomeSpaces;
@@ -99,11 +102,13 @@ public class PlayerBehavior : MonoBehaviour {
                 if (NearestSpace) {
                     HeldItem.Drop(this, NearestSpace);
                     //NearbySpaces.Remove(NearestSpace);
+                    Putdown.Play();
                 }
             } else if (interact > 0 && !HeldItem && NearbyItems.Count > 0) {
                 if (NearestItem) {
                     NearestItem.Lift(this);
                     //NearbyItems.Remove(NearestItem);
+                    Pickup.Play();
                 }
             }
         }
