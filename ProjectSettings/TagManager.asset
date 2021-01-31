@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - Furniture
   layers:
   - Default
   - TransparentFX
