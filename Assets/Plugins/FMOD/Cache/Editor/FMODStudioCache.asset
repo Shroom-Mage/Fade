@@ -1,5 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7993880129889116501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-4744297932259747103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/playerCharacter/pickup
+  m_EditorClassIdentifier: 
+  Path: event:/playerCharacter/pickup
+  guid: 3893c96e9646da45849df2baed48e5c8
+  Banks:
+  - {fileID: -1061145475237158862}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4341551066394692591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20,7 +63,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -3493533283121751970}
+  - {fileID: 1033136659518969742}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -66,7 +109,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 109615
+  Length: 114230
 --- !u!114 &-3493533283121751970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +130,26 @@ MonoBehaviour:
     data1: 2459305618
     data2: 101802803
   Exists: 1
+--- !u!114 &-1257617121579206831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-1061145475237158862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,10 +165,33 @@ MonoBehaviour:
   Path: fmod/ggj21/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637476293529349964
+  lastModified: 637476985367396362
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-560401100765724288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/IntroMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/IntroMusic
+  guid: 1c3c7377c092e2449e57b1167dd2b1d6
+  Banks:
+  - {fileID: 6134033141244580093}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 10500
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,12 +212,15 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -3509164439167931667}
   - {fileID: -4341551066394692591}
+  - {fileID: -560401100765724288}
+  - {fileID: -4744297932259747103}
+  - {fileID: 7599648775345460625}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7902128093947656892}
   StringsBanks:
   - {fileID: 8887353067308425366}
-  stringsBankWriteTime: 637476293529319948
+  stringsBankWriteTime: 637476985367366327
   cacheVersion: 6
 --- !u!114 &270432694392840489
 MonoBehaviour:
@@ -153,6 +242,66 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &1033136659518969742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &1184815075505826177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &3890714237558330227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &6134033141244580093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,10 +317,33 @@ MonoBehaviour:
   Path: fmod/ggj21/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637476293529460070
+  lastModified: 637476985367626566
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &7599648775345460625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/playerCharacter/putdown
+  m_EditorClassIdentifier: 
+  Path: event:/playerCharacter/putdown
+  guid: f44205c19acbca40b3a4e976bad27ef0
+  Banks:
+  - {fileID: -1061145475237158862}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7902128093947656892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +359,7 @@ MonoBehaviour:
   Path: fmod/ggj21/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637476293529319948
+  lastModified: 637476985367356322
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -206,9 +378,9 @@ MonoBehaviour:
   Path: fmod/ggj21/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476293529319948
+  lastModified: 637476985367366327
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1010
+    Value: 1162
   Exists: 1
