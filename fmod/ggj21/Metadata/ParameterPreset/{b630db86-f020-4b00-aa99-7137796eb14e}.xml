@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="ParameterPreset" id="{32658536-0dc3-4d3b-86b7-bfac17d3734c}">
+	<object class="ParameterPreset" id="{b630db86-f020-4b00-aa99-7137796eb14e}">
 		<property name="name">
-			<value>Variations</value>
+			<value>MusicFade</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b91e3718-23c2-4ddd-9138-22011f2faf1c}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{0b08cd1a-8cf7-4dca-8467-c8d1e23eca9c}</destination>
+			<destination>{040b6a52-70ed-457c-b8ef-0cf4cfe2756b}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{0b08cd1a-8cf7-4dca-8467-c8d1e23eca9c}">
+	<object class="GameParameter" id="{040b6a52-70ed-457c-b8ef-0cf4cfe2756b}">
 		<property name="maximum">
-			<value>2</value>
+			<value>10</value>
 		</property>
 		<property name="isGlobal">
 			<value>true</value>
