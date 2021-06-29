@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44129857, g: 0.4901014, b: 0.57015187, a: 1}
+  m_IndirectSpecularColor: {r: 0.44129804, g: 0.4901008, b: 0.5701505, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3472,6 +3472,7 @@ MonoBehaviour:
     type: 3}
   Player: {fileID: 1684122618}
   Title: {fileID: 603337590}
+  musicManager: {fileID: 963194232}
 --- !u!4 &603337590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0280181522c827b489234f3c1c0ade66,
@@ -4776,8 +4777,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
-  - component: {fileID: 963194231}
-  - component: {fileID: 963194229}
+  - component: {fileID: 963194232}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4851,29 +4851,6 @@ Transform:
   m_Father: {fileID: 853845877}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 28.06, y: 0, z: 0}
---- !u!114 &963194229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Music/LevelMusic
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4888,7 +4865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 0}
   ListenerNumber: -1
---- !u!114 &963194231
+--- !u!114 &963194232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4897,20 +4874,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: 341026ff278d2d84f9628c2407c580e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Music/IntroMusic
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
+  music: event:/Music/LevelMusic
+  footsteps: event:/playerCharacter/footsteps
+  pickup: event:/playerCharacter/pickup
+  putdown: event:/playerCharacter/putdown
+  variationsParameter: Variations
+  musicFadeParameter: MusicFade
 --- !u!1001 &992418084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9603,6 +9575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FadeScreen: {fileID: 85020653}
   Progression: {fileID: 598666443}
+  musicManager: {fileID: 963194232}
 --- !u!1001 &2124533225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9895,6 +9868,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2220852208923595382, guid: 39576831956780a4f9594e35c11b2cc3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2224961858216612231, guid: 39576831956780a4f9594e35c11b2cc3,
         type: 3}
       propertyPath: m_Enabled
@@ -9956,6 +9934,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6068925684340690925, guid: 39576831956780a4f9594e35c11b2cc3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6203809855861325621, guid: 39576831956780a4f9594e35c11b2cc3,
         type: 3}
       propertyPath: m_RootOrder
@@ -9990,12 +9973,17 @@ PrefabInstance:
         type: 3}
       propertyPath: Intro
       value: 
-      objectReference: {fileID: 963194231}
+      objectReference: {fileID: 0}
     - target: {fileID: 7453718688606730356, guid: 39576831956780a4f9594e35c11b2cc3,
         type: 3}
       propertyPath: Music
       value: 
-      objectReference: {fileID: 963194229}
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453718688606730356, guid: 39576831956780a4f9594e35c11b2cc3,
+        type: 3}
+      propertyPath: pickup
+      value: event:/playerCharacter/pickup
+      objectReference: {fileID: 0}
     - target: {fileID: 7453718688606730356, guid: 39576831956780a4f9594e35c11b2cc3,
         type: 3}
       propertyPath: ArrowUp
@@ -10003,18 +9991,48 @@ PrefabInstance:
       objectReference: {fileID: 2017137719}
     - target: {fileID: 7453718688606730356, guid: 39576831956780a4f9594e35c11b2cc3,
         type: 3}
+      propertyPath: putdown
+      value: event:/playerCharacter/putdown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453718688606730356, guid: 39576831956780a4f9594e35c11b2cc3,
+        type: 3}
       propertyPath: ArrowDown
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453718688606730356, guid: 39576831956780a4f9594e35c11b2cc3,
+        type: 3}
+      propertyPath: footsteps
+      value: event:/playerCharacter/footsteps
       objectReference: {fileID: 0}
     - target: {fileID: 7453718688606730356, guid: 39576831956780a4f9594e35c11b2cc3,
         type: 3}
       propertyPath: ArrowGroup
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7453718688606730356, guid: 39576831956780a4f9594e35c11b2cc3,
+        type: 3}
+      propertyPath: musicManager
+      value: 
+      objectReference: {fileID: 963194232}
     - target: {fileID: 7471263169694188931, guid: 39576831956780a4f9594e35c11b2cc3,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622977670979547666, guid: 39576831956780a4f9594e35c11b2cc3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622977670979547666, guid: 39576831956780a4f9594e35c11b2cc3,
+        type: 3}
+      propertyPath: Params.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7622977670979547666, guid: 39576831956780a4f9594e35c11b2cc3,
+        type: 3}
+      propertyPath: Params.Array.data[0].Value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8364986269256272586, guid: 39576831956780a4f9594e35c11b2cc3,
         type: 3}
@@ -10029,4 +10047,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6583833755906012445, guid: 39576831956780a4f9594e35c11b2cc3, type: 3}
     - {fileID: 5608167222695089675, guid: 39576831956780a4f9594e35c11b2cc3, type: 3}
+    - {fileID: 7622977670979547666, guid: 39576831956780a4f9594e35c11b2cc3, type: 3}
+    - {fileID: 6068925684340690925, guid: 39576831956780a4f9594e35c11b2cc3, type: 3}
+    - {fileID: 2220852208923595382, guid: 39576831956780a4f9594e35c11b2cc3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 39576831956780a4f9594e35c11b2cc3, type: 3}

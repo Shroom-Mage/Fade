@@ -23,12 +23,8 @@ public class PlayerBehavior : MonoBehaviour {
     public Mesh Hold3;
 
     public Transform Arrow;
-
-    public StudioEventEmitter Footsteps;
-    public StudioEventEmitter Pickup;
-    public StudioEventEmitter Putdown;
-    public StudioEventEmitter Intro;
-    public StudioEventEmitter Music;
+    //Play event instances, initialize parameters, attach one shots to gameObject
+    public MusicManager musicManager;
 
     public List<ItemSpaceBehavior> HomeSpaces;
 
@@ -42,7 +38,8 @@ public class PlayerBehavior : MonoBehaviour {
     void Start() {
         _controller = GetComponent<CharacterController>();
         _mesh = GetComponentInChildren<MeshFilter>();
-        Music.Play();
+        musicManager.PlayMusicEventInstance();
+        musicManager.SetVariationsParameter(0f);
     }
 
     // Update is called once per frame
@@ -78,8 +75,7 @@ public class PlayerBehavior : MonoBehaviour {
         }
 
         //Play footsteps
-        if (previousFrame != currentFrame && (currentFrame == 1 || currentFrame == 3))
-            Footsteps.Play();
+        if (previousFrame != currentFrame && (currentFrame == 1 || currentFrame == 3)) musicManager.PlayFootstepsEventInstance(gameObject);
 
         //Face
         Quaternion newRotation = new Quaternion();
@@ -102,13 +98,13 @@ public class PlayerBehavior : MonoBehaviour {
                 if (NearestSpace) {
                     HeldItem.Drop(this, NearestSpace);
                     //NearbySpaces.Remove(NearestSpace);
-                    Putdown.Play();
+                    musicManager.PlayPutdownEventInstance(gameObject);
                 }
             } else if (interact > 0 && !HeldItem && NearbyItems.Count > 0) {
                 if (NearestItem) {
                     NearestItem.Lift(this);
                     //NearbyItems.Remove(NearestItem);
-                    Pickup.Play();
+                    musicManager.PlayPickupEventInstance(gameObject);
                 }
             }
         }

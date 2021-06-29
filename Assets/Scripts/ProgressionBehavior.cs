@@ -21,6 +21,9 @@ public class ProgressionBehavior : MonoBehaviour {
     public PlayerBehavior Player;
     public Transform Title;
 
+    //Only sets parameters in this script
+    public MusicManager musicManager;   
+
     private void Start() {
         //Set up all interactables and their homes
         GameObject[] interactables = GameObject.FindGameObjectsWithTag("Interactable");
@@ -80,6 +83,8 @@ public class ProgressionBehavior : MonoBehaviour {
                 item.Found = false;
             }
             Debug.Log("Score: " + Score);
+            if (Score <= -20) musicManager.SetVariationsParameter(2f);
+            else if (Score <= -10) musicManager.SetVariationsParameter(1f);
             //Scatter an item for each cycle that has passed
             //Already lost items don't count towards the total
             int scatterCount = Cycle;

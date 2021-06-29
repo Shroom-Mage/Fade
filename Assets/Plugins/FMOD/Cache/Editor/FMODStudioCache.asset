@@ -20,6 +20,46 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-7221705086905780664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-5928593740620012448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-4744297932259747103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,8 +102,7 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
-  Parameters:
-  - {fileID: 1033136659518969742}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -130,6 +169,26 @@ MonoBehaviour:
     data1: 2459305618
     data2: 101802803
   Exists: 1
+--- !u!114 &-1517414195177501336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-1257617121579206831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +209,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-1084974954606247903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LevelMusic/MusicFade
+  m_EditorClassIdentifier: 
+  Name: MusicFade
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-1061145475237158862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,9 +244,29 @@ MonoBehaviour:
   Path: fmod/ggj21/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637476985367396362
+  lastModified: 637477347688032970
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-765008099366930980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-560401100765724288
 MonoBehaviour:
@@ -183,8 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Music/IntroMusic
   guid: 1c3c7377c092e2449e57b1167dd2b1d6
-  Banks:
-  - {fileID: 6134033141244580093}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -212,16 +310,38 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -3509164439167931667}
   - {fileID: -4341551066394692591}
-  - {fileID: -560401100765724288}
   - {fileID: -4744297932259747103}
   - {fileID: 7599648775345460625}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: 212417361976219925}
+  - {fileID: 4953635001691189112}
+  - {fileID: 7619286122884405929}
   MasterBanks:
   - {fileID: 7902128093947656892}
   StringsBanks:
   - {fileID: 8887353067308425366}
-  stringsBankWriteTime: 637476985367366327
+  stringsBankWriteTime: 637477347687130319
   cacheVersion: 6
+--- !u!114 &212417361976219925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Variations
+  m_EditorClassIdentifier: 
+  Name: Variations
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2383836971
+    data2: 1074342744
+  Exists: 1
 --- !u!114 &270432694392840489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +357,26 @@ MonoBehaviour:
   Name: Steps
   Min: 0
   Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &420849096230169300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 3
   Default: 0
   ID:
     data1: 0
@@ -282,6 +422,46 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &2151130417191781703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &2340139925748806049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/LevelMusic/MusicFade
+  m_EditorClassIdentifier: 
+  Name: MusicFade
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &3890714237558330227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +482,46 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &4716195352193886327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &4953635001691189112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2459305618
+    data2: 101802803
+  Exists: 1
 --- !u!114 &6134033141244580093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,10 +537,50 @@ MonoBehaviour:
   Path: fmod/ggj21/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637476985367626566
+  lastModified: 637477347687509258
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &6910867264544723360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &7158468986018716676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/Steps
+  m_EditorClassIdentifier: 
+  Name: Steps
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &7599648775345460625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +604,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7619286122884405929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicFade
+  m_EditorClassIdentifier: 
+  Name: MusicFade
+  Min: 0
+  Max: 10
+  Default: 0
+  ID:
+    data1: 1879963056
+    data2: 1925072277
+  Exists: 1
 --- !u!114 &7902128093947656892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +639,7 @@ MonoBehaviour:
   Path: fmod/ggj21/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637476985367356322
+  lastModified: 637477347687080438
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -378,9 +658,9 @@ MonoBehaviour:
   Path: fmod/ggj21/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476985367366327
+  lastModified: 637477347687130319
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1162
+    Value: 1152
   Exists: 1

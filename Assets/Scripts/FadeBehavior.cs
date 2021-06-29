@@ -6,6 +6,8 @@ public class FadeBehavior : MonoBehaviour
 {
     public SpriteRenderer FadeScreen;
     public ProgressionBehavior Progression;
+    //Fades out and stops music in this script
+    public MusicManager musicManager;
 
     private Material _material;
 
@@ -23,10 +25,13 @@ public class FadeBehavior : MonoBehaviour
         //Countdown until game closes
         if (_countdown <= 0.0f || Input.GetKeyDown(KeyCode.Escape)) {
             Debug.Log("Closing");
+            musicManager.StopMusicEventInstances();
+            musicManager.StopSFXEventInstances();
             Application.Quit();
         } else if (_countdown < 10.0f) {
             _countdown -= Time.deltaTime;
             Debug.Log("Countdown: " + _countdown);
+            musicManager.SetMusicFadeParameter(10f - _countdown);
             return;
         }
 
